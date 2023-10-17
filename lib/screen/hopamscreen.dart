@@ -1,7 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/screen/thembaihat.dart';
+// ignore: depend_on_referenced_packages
 import 'package:like_button/like_button.dart';
+import 'package:music_app/HopAm/bai1.dart';
+import 'package:music_app/HopAm/bai2.dart';
+import 'package:music_app/HopAm/bai3.dart';
+import 'package:music_app/HopAm/bai4.dart';
+import 'package:music_app/HopAm/bai5.dart';
+import 'package:music_app/HopAm/bai6.dart';
+import 'package:music_app/HopAm/bai7.dart';
+import 'package:music_app/HopAm/bai8.dart';
+import 'package:music_app/HopAm/bai9.dart';
+import 'package:music_app/HopAm/bai10.dart';
 
+List<String> searchterms = [
+  "Đưa em về nhà - Grey D",
+  "Lần Cuối - Ngọt",
+  "Anh sẽ đến cùng cơn mưa - Grey D",
+  "Fifty Fifty - Cupid",
+  "Thắc mắc - Thịnh Suy",
+  "Senorita - Shawn Mendes, Camila Cabello",
+  "Chuyện rằng - Thịnh Suy",
+  "My only one - Sebastian Yatra ft. Isabela Moner",
+  "ID 072019 - W/N",
+  "Là anh - Phạm Lịch"
+];
+List<Widget> page1 = [
+  const bai1(),
+  const bai2(),
+  const bai3(),
+  const bai4(),
+  const bai5(),
+  const bai6(),
+  const bai7(),
+  const bai8(),
+  const bai9(),
+  const bai10(),
+];
+
+// ignore: camel_case_types
 class hopam extends StatefulWidget {
   const hopam({super.key});
 
@@ -9,6 +46,7 @@ class hopam extends StatefulWidget {
   State<hopam> createState() => _hopamState();
 }
 
+// ignore: camel_case_types
 class _hopamState extends State<hopam> {
   bool? value = false;
   @override
@@ -54,7 +92,12 @@ class _hopamState extends State<hopam> {
         itemCount: searchterms.length,
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () => null,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => page1[index]),
+              );
+            },
             child: Container(
               margin: const EdgeInsets.fromLTRB(12, 5, 12, 5),
               height: 60,
@@ -97,7 +140,7 @@ class CustomeSearchDelegate extends SearchDelegate {
         onPressed: () {
           query = '';
         },
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
       ),
     ];
   }
@@ -108,7 +151,7 @@ class CustomeSearchDelegate extends SearchDelegate {
       onPressed: () {
         close(context, null);
       },
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
     );
   }
 
@@ -124,8 +167,16 @@ class CustomeSearchDelegate extends SearchDelegate {
       itemCount: matchQuery.length,
       itemBuilder: (context, index) {
         var result = matchQuery[index];
-        return ListTile(
-          title: Text(result),
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => page1[index]),
+            );
+          },
+          child: ListTile(
+            title: Text(result),
+          ),
         );
       },
     );
@@ -134,17 +185,28 @@ class CustomeSearchDelegate extends SearchDelegate {
   @override
   Widget buildSuggestions(BuildContext context) {
     List<String> matchQuery = [];
-    for (var fruit in searchterms) {
+    List<Widget> matchQuery1 = [];
+    for (var id = 0; id < searchterms.length; id++) {
+      var fruit = searchterms[id];
       if (fruit.toLowerCase().contains(query.toLowerCase())) {
         matchQuery.add(fruit);
+        matchQuery1.add(page1[id]);
       }
     }
     return ListView.builder(
       itemCount: matchQuery.length,
       itemBuilder: (context, index) {
         var result = matchQuery[index];
-        return ListTile(
-          title: Text(result),
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => matchQuery1[index]),
+            );
+          },
+          child: ListTile(
+            title: Text(result),
+          ),
         );
       },
     );

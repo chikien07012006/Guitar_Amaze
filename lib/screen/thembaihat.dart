@@ -1,16 +1,5 @@
 import 'package:flutter/material.dart';
-
-List<String> searchterms = [
-  "Apple",
-  "Banana",
-  "Mango",
-  "Pear",
-  "Watermelons",
-  "Blueberries",
-  "Pineapples",
-  "Strawberries",
-  "shit"
-];
+import 'hopamscreen.dart';
 
 class thembaihat extends StatefulWidget {
   const thembaihat({super.key});
@@ -30,7 +19,7 @@ class _thembaihatState extends State<thembaihat> {
             padding: const EdgeInsets.fromLTRB(27, 20, 10, 0),
             alignment: Alignment.bottomLeft,
             child: const Text(
-              'Enter your song name (*)',
+              'Enter your song name and the author (*)',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,

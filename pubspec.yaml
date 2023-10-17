@@ -39,6 +39,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^2.15.0
   cloud_firestore: ^4.8.4
+  audioplayers: ^5.2.0
+  url_launcher: ^6.1.14
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +73,13 @@ flutter:
    - assets/icon/chord.png
    - assets/icon/tuna.png
    - assets/icon/virtual.png
+   - assets/image/bgr.jpg
+   - assets/notes/A.wav
+   - assets/notes/B.wav
+   - assets/notes/D.wav
+   - assets/notes/E1.wav
+   - assets/notes/E6.wav
+   - assets/notes/G.wav
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/screen/hopamscreen.dart';
 import 'package:music_app/screen/tuna.dart';
-import 'package:music_app/screen/virguitar.dart';
 import 'package:scroll_snap_list/scroll_snap_list.dart';
 
 // ignore: camel_case_types
@@ -15,10 +14,8 @@ class homescreen extends StatefulWidget {
 List<product> productlist = [
   product('assets/image/chord.jpg', 'Song Chords', const Color(0xffFFF9D1),
       const hopam(), 'assets/icon/chord.png'),
-  product('assets/image/tuna.jpg', 'Tuner', const Color(0xffC3EEFA),
-      const tuna(), 'assets/icon/tuna.png'),
-  product('assets/image/virtual.jpg', 'Virtual guitar', const Color(0xffE66360),
-      const virguitar(), 'assets/icon/virtual.png'),
+  product('assets/image/tuna.jpg', 'Tuner', const Color(0xffC3EEFA), tuna(),
+      'assets/icon/tuna.png'),
 ];
 
 // ignore: camel_case_types
@@ -46,7 +43,7 @@ class _homescreenState extends State<homescreen> {
               padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
               alignment: Alignment.center,
               child: const Text(
-                'Hi, User_name',
+                'Guitar Amaze',
                 style: TextStyle(
                   fontSize: 30,
                   color: Colors.black,

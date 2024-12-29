@@ -84,8 +84,8 @@ class _GuitarTunerPageState extends State<GuitarTunerPage> {
                   alignment: Alignment.centerLeft,
                   child: Column(children: [
                     TuningButton(
-                      note: 'E6',
-                      onPressed: () => tuneString('E6'),
+                      note: 'D',
+                      onPressed: () => tuneString('D'),
                     ),
                     const SizedBox(
                       height: 10,
@@ -98,8 +98,8 @@ class _GuitarTunerPageState extends State<GuitarTunerPage> {
                       height: 10,
                     ),
                     TuningButton(
-                      note: 'D',
-                      onPressed: () => tuneString('D'),
+                      note: 'E6',
+                      onPressed: () => tuneString('E6'),
                     ),
                   ]),
                 ),
